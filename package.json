@@ -1,0 +1,24 @@
+{
+  "name": "vibration-on-the-moon",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@pixi/sound": "^5.2.0",
+    "@pixi/ui": "^0.7.4",
+    "@pixi/utils": "^7.2.4",
+    "pixi-spine": "^4.0.4",
+    "pixi.js": "^7.2.4",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "sass": "^1.63.6",
+    "vite": "^4.4.0"
+  }
+}

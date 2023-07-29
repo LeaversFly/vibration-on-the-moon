@@ -1,0 +1,314 @@
+{
+	"frames": {
+		"masterBreath-01.png": {
+			"frame": {
+				"x": 1,
+				"y": 148,
+				"w": 59,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 59,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 59,
+				"h": 47
+			}
+		},
+		"masterBreath-02.png": {
+			"frame": {
+				"x": 1,
+				"y": 197,
+				"w": 59,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 59,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 59,
+				"h": 47
+			}
+		},
+		"masterBreath-03.png": {
+			"frame": {
+				"x": 1,
+				"y": 442,
+				"w": 56,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 56,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 56,
+				"h": 47
+			}
+		},
+		"masterBreath-04.png": {
+			"frame": {
+				"x": 1,
+				"y": 442,
+				"w": 56,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 56,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 56,
+				"h": 47
+			}
+		},
+		"masterBreath-05.png": {
+			"frame": {
+				"x": 1,
+				"y": 246,
+				"w": 59,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 59,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 59,
+				"h": 47
+			}
+		},
+		"masterBreath-06.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 62,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 62,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 62,
+				"h": 47
+			}
+		},
+		"masterBreath-07.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 62,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 62,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 62,
+				"h": 47
+			}
+		},
+		"masterBreath-08.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 62,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 62,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 62,
+				"h": 47
+			}
+		},
+		"masterBreath-09.png": {
+			"frame": {
+				"x": 1,
+				"y": 50,
+				"w": 62,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 62,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 62,
+				"h": 47
+			}
+		},
+		"masterBreath-10.png": {
+			"frame": {
+				"x": 1,
+				"y": 99,
+				"w": 60,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 60,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 60,
+				"h": 47
+			}
+		},
+		"masterBreath-11.png": {
+			"frame": {
+				"x": 1,
+				"y": 295,
+				"w": 59,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 59,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 59,
+				"h": 47
+			}
+		},
+		"masterBreath-12.png": {
+			"frame": {
+				"x": 1,
+				"y": 344,
+				"w": 59,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 59,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 59,
+				"h": 47
+			}
+		},
+		"masterBreath-13.png": {
+			"frame": {
+				"x": 1,
+				"y": 393,
+				"w": 59,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 59,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 59,
+				"h": 47
+			}
+		},
+		"masterBreath-14.png": {
+			"frame": {
+				"x": 1,
+				"y": 148,
+				"w": 59,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 59,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 59,
+				"h": 47
+			}
+		}
+	},
+	"animations": {
+		"masterBreath": [
+			"masterBreath-01.png",
+			"masterBreath-02.png",
+			"masterBreath-03.png",
+			"masterBreath-04.png",
+			"masterBreath-05.png",
+			"masterBreath-06.png",
+			"masterBreath-07.png",
+			"masterBreath-08.png",
+			"masterBreath-09.png",
+			"masterBreath-10.png",
+			"masterBreath-11.png",
+			"masterBreath-12.png",
+			"masterBreath-13.png",
+			"masterBreath-14.png"
+		]
+	},
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.1",
+		"image": "masterBreath.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 64,
+			"h": 490
+		},
+		"scale": "1",
+		"smartupdate": "$TexturePacker:SmartUpdate:15baf4766dd408b708a40b3cc2eab9f4:bcb681bf685f5026751015cebca67b7a:38c5cae36dce79e873ecfc8ea1f30045$"
+	}
+}

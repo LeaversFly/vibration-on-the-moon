@@ -1,0 +1,314 @@
+{
+	"frames": {
+		"gustBreath (1).png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 44,
+				"h": 63
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 44,
+				"h": 63
+			},
+			"sourceSize": {
+				"w": 44,
+				"h": 63
+			}
+		},
+		"gustBreath (2).png": {
+			"frame": {
+				"x": 216,
+				"y": 62,
+				"w": 39,
+				"h": 58
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 39,
+				"h": 58
+			},
+			"sourceSize": {
+				"w": 39,
+				"h": 58
+			}
+		},
+		"gustBreath (3).png": {
+			"frame": {
+				"x": 216,
+				"y": 62,
+				"w": 39,
+				"h": 58
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 39,
+				"h": 58
+			},
+			"sourceSize": {
+				"w": 39,
+				"h": 58
+			}
+		},
+		"gustBreath (4).png": {
+			"frame": {
+				"x": 141,
+				"y": 1,
+				"w": 38,
+				"h": 59
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 38,
+				"h": 59
+			},
+			"sourceSize": {
+				"w": 38,
+				"h": 59
+			}
+		},
+		"gustBreath (5).png": {
+			"frame": {
+				"x": 176,
+				"y": 62,
+				"w": 38,
+				"h": 59
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 38,
+				"h": 59
+			},
+			"sourceSize": {
+				"w": 38,
+				"h": 59
+			}
+		},
+		"gustBreath (6).png": {
+			"frame": {
+				"x": 221,
+				"y": 1,
+				"w": 37,
+				"h": 59
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 37,
+				"h": 59
+			},
+			"sourceSize": {
+				"w": 37,
+				"h": 59
+			}
+		},
+		"gustBreath (7).png": {
+			"frame": {
+				"x": 181,
+				"y": 1,
+				"w": 38,
+				"h": 59
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 38,
+				"h": 59
+			},
+			"sourceSize": {
+				"w": 38,
+				"h": 59
+			}
+		},
+		"gustBreath (8).png": {
+			"frame": {
+				"x": 45,
+				"y": 66,
+				"w": 40,
+				"h": 60
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 40,
+				"h": 60
+			},
+			"sourceSize": {
+				"w": 40,
+				"h": 60
+			}
+		},
+		"gustBreath (9).png": {
+			"frame": {
+				"x": 87,
+				"y": 66,
+				"w": 40,
+				"h": 60
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 40,
+				"h": 60
+			},
+			"sourceSize": {
+				"w": 40,
+				"h": 60
+			}
+		},
+		"gustBreath (10).png": {
+			"frame": {
+				"x": 1,
+				"y": 66,
+				"w": 42,
+				"h": 61
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 42,
+				"h": 61
+			},
+			"sourceSize": {
+				"w": 42,
+				"h": 61
+			}
+		},
+		"gustBreath (11).png": {
+			"frame": {
+				"x": 1,
+				"y": 66,
+				"w": 42,
+				"h": 61
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 42,
+				"h": 61
+			},
+			"sourceSize": {
+				"w": 42,
+				"h": 61
+			}
+		},
+		"gustBreath (12).png": {
+			"frame": {
+				"x": 93,
+				"y": 1,
+				"w": 46,
+				"h": 62
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 46,
+				"h": 62
+			},
+			"sourceSize": {
+				"w": 46,
+				"h": 62
+			}
+		},
+		"gustBreath (13).png": {
+			"frame": {
+				"x": 129,
+				"y": 65,
+				"w": 45,
+				"h": 62
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 45,
+				"h": 62
+			},
+			"sourceSize": {
+				"w": 45,
+				"h": 62
+			}
+		},
+		"gustBreath (14).png": {
+			"frame": {
+				"x": 47,
+				"y": 1,
+				"w": 44,
+				"h": 63
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 44,
+				"h": 63
+			},
+			"sourceSize": {
+				"w": 44,
+				"h": 63
+			}
+		}
+	},
+	"animations": {
+		"gustBreath": [
+			"gustBreath (1).png",
+			"gustBreath (2).png",
+			"gustBreath (3).png",
+			"gustBreath (4).png",
+			"gustBreath (5).png",
+			"gustBreath (6).png",
+			"gustBreath (7).png",
+			"gustBreath (8).png",
+			"gustBreath (9).png",
+			"gustBreath (10).png",
+			"gustBreath (11).png",
+			"gustBreath (12).png",
+			"gustBreath (13).png",
+			"gustBreath (14).png"
+		]
+	},
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.1",
+		"image": "gustBreath.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 259,
+			"h": 128
+		},
+		"scale": "1",
+		"smartupdate": "$TexturePacker:SmartUpdate:d367f06416bb9d0c7f44ebf7de551cd7:31a6a9a6b72bc7e458dbcd1634f0c6b1:7935add94823a3e68068e12f05549069$"
+	}
+}

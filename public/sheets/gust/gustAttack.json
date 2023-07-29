@@ -1,0 +1,482 @@
+{
+	"frames": {
+		"gustAttack (1).png": {
+			"frame": {
+				"x": 389,
+				"y": 65,
+				"w": 37,
+				"h": 54
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 37,
+				"h": 54
+			},
+			"sourceSize": {
+				"w": 37,
+				"h": 54
+			}
+		},
+		"gustAttack (2).png": {
+			"frame": {
+				"x": 621,
+				"y": 60,
+				"w": 35,
+				"h": 60
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 35,
+				"h": 60
+			},
+			"sourceSize": {
+				"w": 35,
+				"h": 60
+			}
+		},
+		"gustAttack (3).png": {
+			"frame": {
+				"x": 105,
+				"y": 65,
+				"w": 35,
+				"h": 63
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 35,
+				"h": 63
+			},
+			"sourceSize": {
+				"w": 35,
+				"h": 63
+			}
+		},
+		"gustAttack (4).png": {
+			"frame": {
+				"x": 549,
+				"y": 60,
+				"w": 34,
+				"h": 64
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 34,
+				"h": 64
+			},
+			"sourceSize": {
+				"w": 34,
+				"h": 64
+			}
+		},
+		"gustAttack (5).png": {
+			"frame": {
+				"x": 323,
+				"y": 65,
+				"w": 41,
+				"h": 64
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 41,
+				"h": 64
+			},
+			"sourceSize": {
+				"w": 41,
+				"h": 64
+			}
+		},
+		"gustAttack (6).png": {
+			"frame": {
+				"x": 1,
+				"y": 74,
+				"w": 42,
+				"h": 65
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 42,
+				"h": 65
+			},
+			"sourceSize": {
+				"w": 42,
+				"h": 65
+			}
+		},
+		"gustAttack (7).png": {
+			"frame": {
+				"x": 445,
+				"y": 59,
+				"w": 37,
+				"h": 64
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 37,
+				"h": 64
+			},
+			"sourceSize": {
+				"w": 37,
+				"h": 64
+			}
+		},
+		"gustAttack (8).png": {
+			"frame": {
+				"x": 728,
+				"y": 63,
+				"w": 34,
+				"h": 60
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 34,
+				"h": 60
+			},
+			"sourceSize": {
+				"w": 34,
+				"h": 60
+			}
+		},
+		"gustAttack (9).png": {
+			"frame": {
+				"x": 694,
+				"y": 63,
+				"w": 32,
+				"h": 61
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 32,
+				"h": 61
+			},
+			"sourceSize": {
+				"w": 32,
+				"h": 61
+			}
+		},
+		"gustAttack (10).png": {
+			"frame": {
+				"x": 658,
+				"y": 63,
+				"w": 34,
+				"h": 61
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 34,
+				"h": 61
+			},
+			"sourceSize": {
+				"w": 34,
+				"h": 61
+			}
+		},
+		"gustAttack (11).png": {
+			"frame": {
+				"x": 511,
+				"y": 59,
+				"w": 36,
+				"h": 62
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 36,
+				"h": 62
+			},
+			"sourceSize": {
+				"w": 36,
+				"h": 62
+			}
+		},
+		"gustAttack (12).png": {
+			"frame": {
+				"x": 585,
+				"y": 60,
+				"w": 34,
+				"h": 63
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 34,
+				"h": 63
+			},
+			"sourceSize": {
+				"w": 34,
+				"h": 63
+			}
+		},
+		"gustAttack (13).png": {
+			"frame": {
+				"x": 68,
+				"y": 74,
+				"w": 35,
+				"h": 47
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 35,
+				"h": 47
+			},
+			"sourceSize": {
+				"w": 35,
+				"h": 47
+			}
+		},
+		"gustAttack (14).png": {
+			"frame": {
+				"x": 170,
+				"y": 65,
+				"w": 35,
+				"h": 54
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 35,
+				"h": 54
+			},
+			"sourceSize": {
+				"w": 35,
+				"h": 54
+			}
+		},
+		"gustAttack (15).png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 100,
+				"h": 71
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 100,
+				"h": 71
+			},
+			"sourceSize": {
+				"w": 100,
+				"h": 71
+			}
+		},
+		"gustAttack (16).png": {
+			"frame": {
+				"x": 659,
+				"y": 1,
+				"w": 104,
+				"h": 60
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 104,
+				"h": 60
+			},
+			"sourceSize": {
+				"w": 104,
+				"h": 60
+			}
+		},
+		"gustAttack (17).png": {
+			"frame": {
+				"x": 214,
+				"y": 63,
+				"w": 107,
+				"h": 61
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 107,
+				"h": 61
+			},
+			"sourceSize": {
+				"w": 107,
+				"h": 61
+			}
+		},
+		"gustAttack (18).png": {
+			"frame": {
+				"x": 327,
+				"y": 1,
+				"w": 108,
+				"h": 62
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 108,
+				"h": 62
+			},
+			"sourceSize": {
+				"w": 108,
+				"h": 62
+			}
+		},
+		"gustAttack (19).png": {
+			"frame": {
+				"x": 103,
+				"y": 1,
+				"w": 109,
+				"h": 62
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 109,
+				"h": 62
+			},
+			"sourceSize": {
+				"w": 109,
+				"h": 62
+			}
+		},
+		"gustAttack (20).png": {
+			"frame": {
+				"x": 214,
+				"y": 1,
+				"w": 111,
+				"h": 60
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 111,
+				"h": 60
+			},
+			"sourceSize": {
+				"w": 111,
+				"h": 60
+			}
+		},
+		"gustAttack (21).png": {
+			"frame": {
+				"x": 437,
+				"y": 1,
+				"w": 112,
+				"h": 56
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 112,
+				"h": 56
+			},
+			"sourceSize": {
+				"w": 112,
+				"h": 56
+			}
+		},
+		"gustAttack (22).png": {
+			"frame": {
+				"x": 551,
+				"y": 1,
+				"w": 106,
+				"h": 57
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 106,
+				"h": 57
+			},
+			"sourceSize": {
+				"w": 106,
+				"h": 57
+			}
+		}
+	},
+	"animations": {
+		"gustAttack": [
+			"gustAttack (1).png",
+			"gustAttack (2).png",
+			"gustAttack (3).png",
+			"gustAttack (4).png",
+			"gustAttack (5).png",
+			"gustAttack (6).png",
+			"gustAttack (7).png",
+			"gustAttack (8).png",
+			"gustAttack (9).png",
+			"gustAttack (10).png",
+			"gustAttack (11).png",
+			"gustAttack (12).png",
+			"gustAttack (13).png",
+			"gustAttack (14).png",
+			"gustAttack (15).png",
+			"gustAttack (16).png",
+			"gustAttack (17).png",
+			"gustAttack (18).png",
+			"gustAttack (19).png",
+			"gustAttack (20).png",
+			"gustAttack (21).png",
+			"gustAttack (22).png"
+		]
+	},
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.1",
+		"image": "gustAttack.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 764,
+			"h": 125
+		},
+		"scale": "1",
+		"smartupdate": "$TexturePacker:SmartUpdate:d1351df291a6da9a0e2aa0556aca87f4:aa1450cbac958a127b8d1f33c889c38b:b1bfe2cf6c5546f31e367215b776bafe$"
+	}
+}

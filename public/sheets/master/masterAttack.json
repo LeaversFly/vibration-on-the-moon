@@ -1,0 +1,440 @@
+{
+	"frames": {
+		"masterAttack-01.png": {
+			"frame": {
+				"x": 128,
+				"y": 272,
+				"w": 71,
+				"h": 36
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 71,
+				"h": 36
+			},
+			"sourceSize": {
+				"w": 71,
+				"h": 36
+			}
+		},
+		"masterAttack-02.png": {
+			"frame": {
+				"x": 166,
+				"y": 264,
+				"w": 68,
+				"h": 36
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 68,
+				"h": 36
+			},
+			"sourceSize": {
+				"w": 68,
+				"h": 36
+			}
+		},
+		"masterAttack-03.png": {
+			"frame": {
+				"x": 198,
+				"y": 161,
+				"w": 53,
+				"h": 52
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 53,
+				"h": 52
+			},
+			"sourceSize": {
+				"w": 53,
+				"h": 52
+			}
+		},
+		"masterAttack-04.png": {
+			"frame": {
+				"x": 151,
+				"y": 59,
+				"w": 48,
+				"h": 58
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 48,
+				"h": 58
+			},
+			"sourceSize": {
+				"w": 48,
+				"h": 58
+			}
+		},
+		"masterAttack-05.png": {
+			"frame": {
+				"x": 204,
+				"y": 263,
+				"w": 46,
+				"h": 59
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 46,
+				"h": 59
+			},
+			"sourceSize": {
+				"w": 46,
+				"h": 59
+			}
+		},
+		"masterAttack-06.png": {
+			"frame": {
+				"x": 201,
+				"y": 104,
+				"w": 53,
+				"h": 55
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 53,
+				"h": 55
+			},
+			"sourceSize": {
+				"w": 53,
+				"h": 55
+			}
+		},
+		"masterAttack-07.png": {
+			"frame": {
+				"x": 204,
+				"y": 49,
+				"w": 53,
+				"h": 50
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 53,
+				"h": 50
+			},
+			"sourceSize": {
+				"w": 53,
+				"h": 50
+			}
+		},
+		"masterAttack-08.png": {
+			"frame": {
+				"x": 1,
+				"y": 271,
+				"w": 80,
+				"h": 58
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 80,
+				"h": 58
+			},
+			"sourceSize": {
+				"w": 80,
+				"h": 58
+			}
+		},
+		"masterAttack-09.png": {
+			"frame": {
+				"x": 95,
+				"y": 125,
+				"w": 78,
+				"h": 60
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 78,
+				"h": 60
+			},
+			"sourceSize": {
+				"w": 78,
+				"h": 60
+			}
+		},
+		"masterAttack-10.png": {
+			"frame": {
+				"x": 73,
+				"y": 187,
+				"w": 83,
+				"h": 64
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 83,
+				"h": 64
+			},
+			"sourceSize": {
+				"w": 83,
+				"h": 64
+			}
+		},
+		"masterAttack-11.png": {
+			"frame": {
+				"x": 98,
+				"y": 61,
+				"w": 60,
+				"h": 51
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 60,
+				"h": 51
+			},
+			"sourceSize": {
+				"w": 60,
+				"h": 51
+			}
+		},
+		"masterAttack-12.png": {
+			"frame": {
+				"x": 198,
+				"y": 215,
+				"w": 46,
+				"h": 52
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 46,
+				"h": 52
+			},
+			"sourceSize": {
+				"w": 46,
+				"h": 52
+			}
+		},
+		"masterAttack-13.png": {
+			"frame": {
+				"x": 200,
+				"y": 1,
+				"w": 46,
+				"h": 54
+			},
+			"rotated": true,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 46,
+				"h": 54
+			},
+			"sourceSize": {
+				"w": 46,
+				"h": 54
+			}
+		},
+		"masterAttack-14.png": {
+			"frame": {
+				"x": 1,
+				"y": 1,
+				"w": 104,
+				"h": 58
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 104,
+				"h": 58
+			},
+			"sourceSize": {
+				"w": 104,
+				"h": 58
+			}
+		},
+		"masterAttack-15.png": {
+			"frame": {
+				"x": 107,
+				"y": 1,
+				"w": 91,
+				"h": 56
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 91,
+				"h": 56
+			},
+			"sourceSize": {
+				"w": 91,
+				"h": 56
+			}
+		},
+		"masterAttack-16.png": {
+			"frame": {
+				"x": 1,
+				"y": 125,
+				"w": 92,
+				"h": 60
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 92,
+				"h": 60
+			},
+			"sourceSize": {
+				"w": 92,
+				"h": 60
+			}
+		},
+		"masterAttack-17.png": {
+			"frame": {
+				"x": 1,
+				"y": 61,
+				"w": 95,
+				"h": 62
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 95,
+				"h": 62
+			},
+			"sourceSize": {
+				"w": 95,
+				"h": 62
+			}
+		},
+		"masterAttack-18.png": {
+			"frame": {
+				"x": 139,
+				"y": 187,
+				"w": 57,
+				"h": 75
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 57,
+				"h": 75
+			},
+			"sourceSize": {
+				"w": 57,
+				"h": 75
+			}
+		},
+		"masterAttack-19.png": {
+			"frame": {
+				"x": 1,
+				"y": 187,
+				"w": 70,
+				"h": 82
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 70,
+				"h": 82
+			},
+			"sourceSize": {
+				"w": 70,
+				"h": 82
+			}
+		},
+		"masterAttack-20.png": {
+			"frame": {
+				"x": 61,
+				"y": 272,
+				"w": 65,
+				"h": 78
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 65,
+				"h": 78
+			},
+			"sourceSize": {
+				"w": 65,
+				"h": 78
+			}
+		}
+	},
+	"animations": {
+		"masterAttack": [
+			"masterAttack-01.png",
+			"masterAttack-02.png",
+			"masterAttack-03.png",
+			"masterAttack-04.png",
+			"masterAttack-05.png",
+			"masterAttack-06.png",
+			"masterAttack-07.png",
+			"masterAttack-08.png",
+			"masterAttack-09.png",
+			"masterAttack-10.png",
+			"masterAttack-11.png",
+			"masterAttack-12.png",
+			"masterAttack-13.png",
+			"masterAttack-14.png",
+			"masterAttack-15.png",
+			"masterAttack-16.png",
+			"masterAttack-17.png",
+			"masterAttack-18.png",
+			"masterAttack-19.png",
+			"masterAttack-20.png"
+		]
+	},
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "1.1",
+		"image": "masterAttack.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 255,
+			"h": 352
+		},
+		"scale": "1",
+		"smartupdate": "$TexturePacker:SmartUpdate:ac3be238878b142d0ba22dd565d5c527:2b0b75215d6803fe904a14373cd8e4b4:d362918808ed60bef60800c9fe6a4af6$"
+	}
+}
