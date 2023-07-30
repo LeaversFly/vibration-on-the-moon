@@ -1,0 +1,104 @@
+
+masterAttack.png
+size: 64,490
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+masterBreath (1)
+  rotate: false
+  xy: 1, 148
+  size: 59, 47
+  orig: 59, 47
+  offset: 0, 0
+  index: -1
+masterBreath (2)
+  rotate: false
+  xy: 1, 197
+  size: 59, 47
+  orig: 59, 47
+  offset: 0, 0
+  index: -1
+masterBreath (3)
+  rotate: false
+  xy: 1, 442
+  size: 56, 47
+  orig: 56, 47
+  offset: 0, 0
+  index: -1
+masterBreath (4)
+  rotate: false
+  xy: 1, 442
+  size: 56, 47
+  orig: 56, 47
+  offset: 0, 0
+  index: -1
+masterBreath (5)
+  rotate: false
+  xy: 1, 246
+  size: 59, 47
+  orig: 59, 47
+  offset: 0, 0
+  index: -1
+masterBreath (6)
+  rotate: false
+  xy: 1, 1
+  size: 62, 47
+  orig: 62, 47
+  offset: 0, 0
+  index: -1
+masterBreath (7)
+  rotate: false
+  xy: 1, 1
+  size: 62, 47
+  orig: 62, 47
+  offset: 0, 0
+  index: -1
+masterBreath (8)
+  rotate: false
+  xy: 1, 1
+  size: 62, 47
+  orig: 62, 47
+  offset: 0, 0
+  index: -1
+masterBreath (9)
+  rotate: false
+  xy: 1, 50
+  size: 62, 47
+  orig: 62, 47
+  offset: 0, 0
+  index: -1
+masterBreath (10)
+  rotate: false
+  xy: 1, 99
+  size: 60, 47
+  orig: 60, 47
+  offset: 0, 0
+  index: -1
+masterBreath (11)
+  rotate: false
+  xy: 1, 295
+  size: 59, 47
+  orig: 59, 47
+  offset: 0, 0
+  index: -1
+masterBreath (12)
+  rotate: false
+  xy: 1, 344
+  size: 59, 47
+  orig: 59, 47
+  offset: 0, 0
+  index: -1
+masterBreath (13)
+  rotate: false
+  xy: 1, 393
+  size: 59, 47
+  orig: 59, 47
+  offset: 0, 0
+  index: -1
+masterBreath (14)
+  rotate: false
+  xy: 1, 148
+  size: 59, 47
+  orig: 59, 47
+  offset: 0, 0
+  index: -1

@@ -57,6 +57,11 @@ export class AssetsManager {
                 const mapKeyToResource = await AssetsManager.#loadSheet(jsonList, keyRemap, onProgress);
                 Object.assign(assetsPacks[sheetName], mapKeyToResource);
             },
+            async loadSpine(sheetName, jsonList) {
+                totalProgress.packName = sheetName;
+                const mapKeyToResource = await AssetsManager.#loadSpine(jsonList, onProgress);
+                Object.assign(assetsPacks[sheetName], mapKeyToResource);
+            },
         });
 
         this.#isLoading = false;
@@ -94,5 +99,19 @@ export class AssetsManager {
             mapKeyToResource.textures[key] = mapFileNameToResource.textures[fileName];
         });
         return mapKeyToResource;
+    }
+
+    /** 加载 SpineData 型分包 */
+    static async #loadSpine(jsonList, onProgress) {
+        const total = jsonList.length;
+        const mapFileNameToResource = {};
+        // 逐个加载 json，结果合并到同一个集合内
+        for (let i = 0; i < total; i += 1) {
+            const jsonUrl = jsonList[i];
+            const newAssets = await Assets.load(jsonUrl);
+            onProgress((i + 1) / total)
+            Object.assign(mapFileNameToResource, newAssets);
+        }
+        return mapFileNameToResource;
     }
 }

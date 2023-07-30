@@ -1,16 +1,14 @@
-import { AnimatedSprite } from 'pixi.js';
+import { Spine } from 'pixi-spine'
 
-export default class FightSprite extends AnimatedSprite {
+export default class FightSprite extends Spine {
     constructor(options = {}) {
-        super(options.animations);
+        super(options.data);
 
         this.init();
     }
 
     async init() {
-        this.anchor.set(0.5);
-        this.animationSpeed = 0.2
-        this.scale.set(3, 3)
+        this.scale.set(0.5)
     }
 
     /** 向左移动 */
@@ -35,7 +33,7 @@ export default class FightSprite extends AnimatedSprite {
 
     // 镜像翻转
     mirror() {
-        this.scale.set(-3, 3)
+        this.scale.set(-0.5, 0.5)
     }
 
     // 扩展销毁操作
