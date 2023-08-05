@@ -1,6 +1,7 @@
 import { Application } from 'pixi.js';
-import { AssetsManager } from './service/assets-manager';
-import FightScene from './scenes/fight-scenes';
+import FightScene from './scenes/fight/fight-scenes';
+import { BootLoader } from './scenes/boot-loader'
+import { SceneManager } from './service/scene-manager'
 
 export default class MyApp extends Application {
     constructor() {
@@ -10,19 +11,21 @@ export default class MyApp extends Application {
     }
 
     async startGame() {
-        // 初始化资源管理器
-        await AssetsManager.init({
-            onProgress: (progress) => {
-                // console.log('加载进度:', progress);
+        SceneManager.init({
+            app: this,
+            root: this.stage
+        })
+
+        const bootLoader = new BootLoader({
+            onAssetsLoaded: () => {
+                // 创建起始场景
+                const fightScene = new FightScene({
+                    app: this,
+                });
+                SceneManager.changeScene(fightScene);
             },
         });
 
-        // 创建起始场景
-        const fightScene = new FightScene({
-            app: this,
-        });
-        this.stage.addChild(fightScene);
-
-        console.log(AssetsManager.assetsPacks);
+        SceneManager.changeScene(bootLoader);
     }
 } 

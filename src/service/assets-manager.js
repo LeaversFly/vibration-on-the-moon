@@ -12,7 +12,7 @@ export class AssetsManager {
     }
 
     constructor() {
-        // 避免被外部误操作实例化
+        throw new Error('请勿调用此构造函数');
     }
 
     static async init(options) {

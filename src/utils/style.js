@@ -4,15 +4,6 @@
  * @param {object} property style属性
  * @returns null
  */
-
-function handle(property) {
-    let style = ''
-    for (let key in property) {
-        style += `${key}:${property[key]};`
-    }
-    return style
-}
-
 export function rewirteStyle(tag, property) {
     if (Array.isArray(tag) && Array.isArray(property)) {
         for (let i = 0; i < tag.length; i++) {
@@ -25,4 +16,12 @@ export function rewirteStyle(tag, property) {
     } else {
         throw Error('Error paramters!')
     }
+}
+
+function handle(property) {
+    let style = ''
+    for (let key in property) {
+        style += `${key}:${property[key]};`
+    }
+    return style
 }

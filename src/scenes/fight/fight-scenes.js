@@ -1,8 +1,8 @@
-import BaseScene from './base-scene'
-import FightSprite from '../characters/fight-sprite'
-import { AssetsManager } from '../service/assets-manager';
-import { BlurFilter, Graphics, Sprite, Text } from 'pixi.js';
-import { Button } from '@pixi/ui';
+import BaseScene from '../base-scene'
+import FightSprite from '../../characters/fight-sprite'
+import { AssetsManager } from '../../service/assets-manager';
+import { BlurFilter, Graphics, Sprite } from 'pixi.js';
+import { SkillButtonCreator } from './skill-button-creator';
 
 export default class FightScene extends BaseScene {
     constructor(options) {
@@ -15,7 +15,7 @@ export default class FightScene extends BaseScene {
 
         this.createMembers(options.app);
 
-        this.createEvents(options.app)
+        this.bindEvents(options.app)
     }
 
     /**
@@ -38,17 +38,39 @@ export default class FightScene extends BaseScene {
         const appWidth = app.screen.width
         const appHeight = app.screen.height
 
+        // 技能面板
         const container = new Graphics()
         container.beginFill('#29333d').drawRect(0, appHeight * 0.6, appWidth, appHeight * 0.4);
-        const blurFilter = new BlurFilter()
-        container.filters = [blurFilter]
+        const containerBlur = new BlurFilter()
+        container.filters = [containerBlur]
 
-        const text = new Text('🤙', { fontSize: 70 });
-        text.anchor.set(0.5);
-        text.x = appWidth * 0.5;
-        text.y = appHeight * 0.7;
+        const skillButtonCreator = new SkillButtonCreator({
+            beginFill: '#29333d',
+            lineStyle: { width: 4, color: '#fbfbfb' },
+            width: appWidth * 0.4,
+            height: 60,
+            radius: 8,
+        })
 
-        this.addChild(container, text)
+        const button1 = skillButtonCreator.create({
+            x: appWidth * 0.1,
+            y: appHeight * 0.65,
+            text: {
+                words: '技能1',
+                style: { fill: 'white' }
+            }
+        })
+
+        const button2 = skillButtonCreator.create({
+            x: appWidth * 0.1,
+            y: appHeight * 0.73,
+            text: {
+                words: '技能2',
+                style: { fill: 'white' }
+            }
+        })
+
+        this.addChild(container, button1.view, button2.view)
     }
 
     /**
@@ -81,11 +103,10 @@ export default class FightScene extends BaseScene {
     }
 
     /**
-    * 创建本场景事件
+    * 绑定本场景事件
     * @param app 所属应用实例
     */
-    createEvents(app) {
-        console.log(this.children);
+    bindEvents(app) {
         this.interactive = true
         const position = {
             spineboy: 3
@@ -96,25 +117,25 @@ export default class FightScene extends BaseScene {
             //顺序不可颠倒
             if (scroll > 0) {
                 if (position.spineboy + 1 > 3) {
-                    this.children[3].moveLeft(position.spineboy * 150)
+                    this.children[4].moveLeft(position.spineboy * 150)
                     position.spineboy = 0
                 } else {
-                    this.children[3].moveRight(150)
+                    this.children[4].moveRight(150)
                     position.spineboy += 1
                 }
             } else {
                 if (position.spineboy - 1 < 0) {
                     position.spineboy = 3
-                    this.children[3].moveRight(position.spineboy * 150)
+                    this.children[4].moveRight(position.spineboy * 150)
                 } else {
-                    this.children[3].moveLeft(150)
+                    this.children[4].moveLeft(150)
                     position.spineboy -= 1
                 }
             }
         });
-        this.on('click', (e) => {
-            this.children[3].state.setAnimation(0, 'shoot')
-            this.children[3].state.addAnimation(0, 'idle', true, 0)
+        this.children[2].on('click', (e) => {
+            this.children[4].state.setAnimation(0, 'shoot')
+            this.children[4].state.addAnimation(0, 'idle', true, 0)
         })
     }
 }
