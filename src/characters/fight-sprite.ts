@@ -1,13 +1,16 @@
 import { Spine } from 'pixi-spine'
+import { FightSpriteOptions } from '../types/characters';
 
 export default class FightSprite extends Spine {
-    constructor(options = {}) {
+    eventMode = 'statc';
+
+    constructor(options: FightSpriteOptions) {
         super(options.data);
 
         this.init();
     }
 
-    async init() {
+    init() {
         this.scale.set(0.5)
     }
 
@@ -37,7 +40,7 @@ export default class FightSprite extends Spine {
     }
 
     // 扩展销毁操作
-    destroy(options) {
+    destroy(options: unknown) {
         // 调用基类的 destroy 方法，保留原有的销毁流程
         super.destroy(options);
         // TODO: 释放我们新增的资源引用...

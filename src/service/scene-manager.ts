@@ -1,5 +1,6 @@
 // src/services/scene-manager.ts
-import { Container } from 'pixi.js';
+import { Application, Container } from 'pixi.js';
+import { SceneManagerInitOptions } from '../types/service';
 
 /** 场景管理器 */
 export class SceneManager {
@@ -9,28 +10,28 @@ export class SceneManager {
     }
 
     /** 当前应用 */
-    static $app = null;
-    /** 当前应用 (Read-only) */
-    static get app() {
+    private static $app: Application | null = null;
+    /** 当前应用 (Public Read-only) */
+    public static get app() {
         return this.$app;
     }
 
     /** 场景根节点 */
-    static $root = null;
-    /** 场景根节点 (Read-only) */
-    static get root() {
+    private static $root: Container | null = null;
+    /** 场景根节点 (Public Read-only) */
+    public static get root() {
         return this.$root;
     }
 
     /** 当前场景 */
-    static $currentScene = null;
-    /** 当前场景 (Read-only) */
-    static get currentScene() {
+    private static $currentScene: Container | null = null;
+    /** 当前场景 (Public Read-only) */
+    public static get currentScene() {
         return this.$currentScene;
     }
 
     /** 当前应用是否运作中 */
-    static get isAppRunning() {
+    public static get isAppRunning() {
         return !!this.app?.renderer;
     }
 
@@ -38,7 +39,7 @@ export class SceneManager {
     * 初始化场景管理器
     * @param options 初始化参数
     */
-    static init(options) {
+    static init(options: SceneManagerInitOptions) {
         const { app } = options;
         const { stage: appStage } = app;
         const { root = appStage } = options;
@@ -53,7 +54,7 @@ export class SceneManager {
         // this.onResize();
     }
 
-    static onUpdate(delta) {
+    static onUpdate(delta:number) {
         if (!this.isAppRunning) return;
         this.$currentScene?.update?.(delta);
     }

@@ -6,11 +6,11 @@ import { AssetsManager } from '../service/assets-manager';
 const LOG_HEADER = '[boot-loader]';
 
 export class BootLoader extends Container {
-    txtProgress;
+    private txtProgress: Text | undefined;
     onAssetsLoaded;
     members;
 
-    constructor(options) {
+    constructor(options: { onAssetsLoaded: () => void }) {
         super();
 
         this.onAssetsLoaded = options.onAssetsLoaded;

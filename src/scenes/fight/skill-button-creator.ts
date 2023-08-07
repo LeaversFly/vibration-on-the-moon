@@ -1,5 +1,6 @@
 import { Button } from "@pixi/ui";
 import { Graphics, Text } from "pixi.js";
+import { SkillButtonCreateOptions, SkillButtonCreatorOptions } from "../../types/scenes";
 
 export class SkillButtonCreator {
     beginFill
@@ -8,7 +9,7 @@ export class SkillButtonCreator {
     height
     radius
 
-    constructor(options) {
+    constructor(options: SkillButtonCreatorOptions) {
         this.beginFill = options.beginFill
         this.lineStyle = options.lineStyle
         this.width = options.width
@@ -20,7 +21,7 @@ export class SkillButtonCreator {
      * 创建技能按钮
      * @param {object} options 
      */
-    create(options) {
+    create(options: SkillButtonCreateOptions) {
         const button = new Button(
             new Graphics().beginFill(this.beginFill)
                 .lineStyle(this.lineStyle)

@@ -13,6 +13,7 @@
     "@pixi/ui": "^0.7.4",
     "pixi-spine": "^4.0.4",
     "pixi.js": "^7.2.4",
+    "typescript": "^5.1.6",
     "vue": "^3.3.4"
   },
   "devDependencies": {

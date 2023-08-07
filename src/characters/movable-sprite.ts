@@ -1,9 +1,12 @@
 import { Sprite } from 'pixi.js';
 import { AssetsManager } from '../service/assets-manager';
 import { keyMove } from '../utils/keyboard';
+import { MovableSpriteOptions } from '../types/scenes';
 
 export default class MovableSprite extends Sprite {
-    constructor(options = {}) {
+    interactive = false;
+
+    constructor(options: MovableSpriteOptions) {
         super();
 
         this.init(options);
@@ -11,7 +14,7 @@ export default class MovableSprite extends Sprite {
 
     operational = false
 
-    async init(options) {
+    init(options: MovableSpriteOptions) {
         this.operational = options.operational
 
         this.texture = AssetsManager.assetsPacks.SPRITE_TEXTURE.F_CHARACTER
@@ -42,7 +45,7 @@ export default class MovableSprite extends Sprite {
     }
 
     // 扩展销毁操作
-    destroy(options) {
+    destroy(options: undefined) {
         // 调用基类的 destroy 方法，保留原有的销毁流程
         super.destroy(options);
         // TODO: 释放我们新增的资源引用...
