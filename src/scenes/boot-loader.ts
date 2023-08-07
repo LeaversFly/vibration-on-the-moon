@@ -1,11 +1,11 @@
 // src/scenes/boot-loader.ts
-import { Container, Text } from 'pixi.js';
+import { Container, Sprite, Text } from 'pixi.js';
 
 import { AssetsManager } from '../service/assets-manager';
 
 const LOG_HEADER = '[boot-loader]';
 
-export class BootLoader extends Container implements IScene{
+export class BootLoader extends Container implements IScene {
     onAssetsLoaded;
     members;
 
@@ -49,11 +49,13 @@ export class BootLoader extends Container implements IScene{
             fontWeight: '900',
             fill: 0xffffff,
         });
+        const btnExit = new Sprite()
 
         this.addChild(txtProgress);
 
         return {
             txtProgress,
+            btnExit
         };
     }
 

@@ -1,17 +1,15 @@
-import BaseScene from '../base-scene'
 import FightSprite from '../../characters/fight-sprite'
 import { AssetsManager } from '../../service/assets-manager';
-import { Application, BlurFilter, Graphics, Sprite } from 'pixi.js';
+import { Application, BlurFilter, Container, Graphics, Sprite } from 'pixi.js';
 import { SkillButtonCreator } from './skill-button-creator';
 import { SkillLineCreator } from './skill-line-creator';
-import { FightSceneOptions } from '../../types/scenes';
 
-export default class FightScene extends BaseScene {
+export default class FightScene extends Container implements IScene {
     scenes
     members
     components
 
-    constructor(options: FightSceneOptions) {
+    constructor(options: { app: Application }) {
         // 调用基类构造函数，完成基础初始化
         super();
 

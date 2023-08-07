@@ -1,11 +1,5 @@
-import { Application } from "pixi.js"
-
 export type MovableSpriteOptions = {
     operational: boolean
-}
-
-export type FightSceneOptions = {
-    app: Application
 }
 
 export type SkillButtonCreatorOptions = {

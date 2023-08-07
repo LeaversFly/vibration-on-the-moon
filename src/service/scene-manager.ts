@@ -1,5 +1,5 @@
 // src/services/scene-manager.ts
-import { Application, Container, DisplayObject } from 'pixi.js';
+import { Application, Container } from 'pixi.js';
 import { SceneManagerInitOptions } from '../types/service';
 
 /** 场景管理器 */

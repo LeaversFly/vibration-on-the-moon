@@ -1,8 +1,7 @@
 import MovableSprite from '../characters/movable-sprite';
-import BaseScene from './base-scene'
-import { Application } from 'pixi.js';
+import { Application, Container } from 'pixi.js';
 
-export default class FirstScene extends BaseScene {
+export default class FirstScene extends Container implements IScene {
     constructor(options: { app: Application }) {
         // 调用基类构造函数，完成基础初始化
         super();
