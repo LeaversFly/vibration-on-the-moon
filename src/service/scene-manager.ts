@@ -1,5 +1,5 @@
 // src/services/scene-manager.ts
-import { Application, Container } from 'pixi.js';
+import { Application, Container, DisplayObject } from 'pixi.js';
 import { SceneManagerInitOptions } from '../types/service';
 
 /** 场景管理器 */
@@ -24,7 +24,7 @@ export class SceneManager {
     }
 
     /** 当前场景 */
-    private static $currentScene: Container | null = null;
+    private static $currentScene: IScene | null = null;
     /** 当前场景 (Public Read-only) */
     public static get currentScene() {
         return this.$currentScene;
@@ -54,7 +54,7 @@ export class SceneManager {
         // this.onResize();
     }
 
-    static onUpdate(delta:number) {
+    static onUpdate(delta: number) {
         if (!this.isAppRunning) return;
         this.$currentScene?.update?.(delta);
     }
@@ -74,7 +74,7 @@ export class SceneManager {
     * @param newScene 新场景
     * @param options 场景进场参数
     */
-    static changeScene(newScene, options) {
+    static changeScene(newScene: IScene, options?: undefined) {
         this.checkIfInitialized();
         const {
             currentScene: oldScene,

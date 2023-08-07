@@ -1,6 +1,5 @@
-import { ISkeletonData } from "pixi-spine"
 import { Texture } from "pixi.js";
-import { BundleLoader, SpineLoader } from "../types/config";
+import { BundleLoader, SpineLoader, SpineParam } from "../types/config";
 
 /** 包参数：游戏音频 */
 export enum GameAudio {
@@ -22,7 +21,7 @@ export class AssetsPacks {
     SPRITE_TEXTURE = {} as Record<keyof typeof SpriteTexture, Texture>
 
     /** 素材表：Spineboy */
-    SHEET_SPINEBOY = {} as ISkeletonData
+    SHEET_SPINEBOY = {} as SpineParam
 
     /** 加载函数 */
     static async loadAllPacks({ loadBundle, loadSpine }: {

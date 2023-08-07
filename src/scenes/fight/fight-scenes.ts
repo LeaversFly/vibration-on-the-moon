@@ -1,7 +1,7 @@
 import BaseScene from '../base-scene'
 import FightSprite from '../../characters/fight-sprite'
 import { AssetsManager } from '../../service/assets-manager';
-import { Application, BlurFilter, EventMode, Graphics, Sprite } from 'pixi.js';
+import { Application, BlurFilter, Graphics, Sprite } from 'pixi.js';
 import { SkillButtonCreator } from './skill-button-creator';
 import { SkillLineCreator } from './skill-line-creator';
 import { FightSceneOptions } from '../../types/scenes';
@@ -118,7 +118,6 @@ export default class FightScene extends BaseScene {
         spineboy.stateData.setMix('shoot', 'idle', 0.2)
         spineboy.stateData.setMix('jump', 'idle', 0.2)
         spineboy.stateData.setMix('idle', 'jump', 0.2)
-        spineboy.eventMode = 'auto'
         spineboy.state.setAnimation(0, 'idle', true)
 
         //enemy
@@ -180,11 +179,11 @@ export default class FightScene extends BaseScene {
             }
         });
         this.components.button1.onPress.connect(() => {
-            this.members.spineboy.state.setAnimation(0, 'shoot')
+            this.members.spineboy.state.setAnimation(0, 'shoot', false)
             this.members.spineboy.state.addAnimation(0, 'idle', true, 0)
         })
         this.components.button2.onPress.connect(() => {
-            this.members.spineboy.state.setAnimation(0, 'jump')
+            this.members.spineboy.state.setAnimation(0, 'jump', false)
             this.members.spineboy.state.addAnimation(0, 'idle', true, 0)
         })
     }

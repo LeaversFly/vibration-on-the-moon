@@ -7,7 +7,7 @@ import { rewirteStyle } from './utils/style';
 
 // 创建应用
 const app = new MyApp();
-document.body.appendChild(app.view);
+document.body.appendChild(app.view as HTMLCanvasElement);
 
 // 调整body和canvas样式
 rewirteStyle(['body', 'canvas'], [

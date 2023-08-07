@@ -16,7 +16,7 @@ export class AssetsManager {
         throw new Error('请勿调用此构造函数');
     }
 
-    private static async init(options: {
+    static async init(options: {
         onProgress: TotalProgressCallback
     }) {
         if (this.isInitialized || this.isLoading) return;

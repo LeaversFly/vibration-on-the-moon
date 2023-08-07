@@ -5,8 +5,7 @@ import { AssetsManager } from '../service/assets-manager';
 
 const LOG_HEADER = '[boot-loader]';
 
-export class BootLoader extends Container {
-    private txtProgress: Text | undefined;
+export class BootLoader extends Container implements IScene{
     onAssetsLoaded;
     members;
 

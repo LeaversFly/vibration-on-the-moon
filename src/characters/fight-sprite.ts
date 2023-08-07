@@ -1,10 +1,7 @@
-import { Spine } from 'pixi-spine'
-import { FightSpriteOptions } from '../types/characters';
+import { ISkeletonData, Spine } from 'pixi-spine'
 
 export default class FightSprite extends Spine {
-    eventMode = 'statc';
-
-    constructor(options: FightSpriteOptions) {
+    constructor(options: { data: ISkeletonData }) {
         super(options.data);
 
         this.init();

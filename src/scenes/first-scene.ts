@@ -1,6 +1,6 @@
 import MovableSprite from '../characters/movable-sprite';
 import BaseScene from './base-scene'
-import { Application, ICanvas } from 'pixi.js';
+import { Application } from 'pixi.js';
 
 export default class FirstScene extends BaseScene {
     constructor(options: { app: Application }) {
