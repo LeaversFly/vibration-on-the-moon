@@ -1,13 +1,17 @@
 import FightSprite from '../../characters/fight-sprite'
 import { AssetsManager } from '../../service/assets-manager';
-import { Application, BlurFilter, Container, Graphics, Sprite } from 'pixi.js';
+import { Application, BlurFilter, Container, FederatedPointerEvent, FederatedWheelEvent, Graphics, Sprite } from 'pixi.js';
 import { SkillButtonCreator } from './skill-button-creator';
 import { SkillLineCreator } from './skill-line-creator';
+import { EventEmitter, sign } from '@pixi/utils';
+import { ref } from 'vue';
+import { blockProcess } from '../../utils/fight';
 
 export default class FightScene extends Container implements IScene {
-    scenes
-    members
-    components
+    private scenes
+    private members
+    private components
+    private events
 
     constructor(options: { app: Application }) {
         // 调用基类构造函数，完成基础初始化
@@ -19,7 +23,9 @@ export default class FightScene extends Container implements IScene {
 
         this.members = this.createMembers(options.app);
 
-        this.bindEvents(options.app)
+        this.events = this.bindEvents(options.app)
+
+        this.startFight()
     }
 
     /**
@@ -176,21 +182,29 @@ export default class FightScene extends Container implements IScene {
                 }
             }
         });
+        const sign = new EventEmitter()
         this.components.button1.onPress.connect(() => {
             this.members.spineboy.state.setAnimation(0, 'shoot', false)
             this.members.spineboy.state.addAnimation(0, 'idle', true, 0)
+            sign.emit('a', () => {
+                console.log('攻击了！');
+            })
         })
         this.components.button2.onPress.connect(() => {
             this.members.spineboy.state.setAnimation(0, 'jump', false)
             this.members.spineboy.state.addAnimation(0, 'idle', true, 0)
         })
+
+        return {
+            sign
+        }
     }
 
     /**
      * 开始游戏
      * @param {object} options 
      */
-    startFight(options: unknown) {
+    async startFight(options?: unknown) {
         const myTeam = [
             {
                 hp: 100
@@ -201,21 +215,42 @@ export default class FightScene extends Container implements IScene {
                 hp: 100
             }
         ]
+
         let i = 1
-        while (myTeam[0].hp > 0 || enemyTeam[0].hp > 0) {
-            console.log(`回合${i}开始！`);
+        let round = 1
+        let seconds = 59
 
-            let seconds = 60
-            let timer = setInterval(() => {
-                seconds--
-                console.log(`你还有${seconds}秒！`);
-            }, 1000);
+        while (i < 10) {
+            console.log(`回合${i++}开始！`);
 
-            if (seconds === 0) {
-                clearInterval(timer)
-                console.log('回合结束！');
+            if (round === 1) {
+                console.log('你的回合！');
+
+                seconds = 59
+                let timer = setInterval(() => {
+                    console.log(`你还有${seconds}秒！`);
+                    seconds--
+                }, 1000)
+                await blockProcess(10000, () => {
+                    round = 0
+                    clearInterval(timer)
+                }, (resolve) => {
+                    this.events.sign.on('a', () => {
+                        console.log('on');
+                        round = 0
+                        clearInterval(timer)
+                        resolve()
+                    })
+                })
+                this.events.sign.off('a')
+            } else {
+                console.log('敌方回合！');
+                await blockProcess(5000, () => {
+                    this.members.enemy.state.setAnimation(0, 'jump', false)
+                    this.members.enemy.state.addAnimation(0, 'idle', true, 0)
+                    round = 1
+                })
             }
-
         }
     }
 }
