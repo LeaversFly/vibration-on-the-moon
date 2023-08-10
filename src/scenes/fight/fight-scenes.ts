@@ -1,10 +1,9 @@
 import FightSprite from '../../characters/fight-sprite'
 import { AssetsManager } from '../../service/assets-manager';
-import { Application, BlurFilter, Container, FederatedPointerEvent, FederatedWheelEvent, Graphics, Sprite } from 'pixi.js';
+import { Application, BlurFilter, Container, Graphics, Sprite } from 'pixi.js';
 import { SkillButtonCreator } from './skill-button-creator';
 import { SkillLineCreator } from './skill-line-creator';
-import { EventEmitter, sign } from '@pixi/utils';
-import { ref } from 'vue';
+import { EventEmitter } from '@pixi/utils';
 import { blockProcess } from '../../utils/fight';
 
 export default class FightScene extends Container implements IScene {
@@ -127,6 +126,7 @@ export default class FightScene extends Container implements IScene {
         //enemy
         const enemy = new FightSprite({ data: SHEET_SPINEBOY.spineData })
         enemy.position.set(app.screen.width / 2, app.screen.height / 2)
+        spineboy.stateData.setMix('idle', 'death', 0.2)
         enemy.state.setAnimation(0, 'idle', true)
 
         // 友方统一在左
@@ -186,7 +186,7 @@ export default class FightScene extends Container implements IScene {
         this.components.button1.onPress.connect(() => {
             this.members.spineboy.state.setAnimation(0, 'shoot', false)
             this.members.spineboy.state.addAnimation(0, 'idle', true, 0)
-            sign.emit('a', () => {
+            sign.emit('action', () => {
                 console.log('攻击了！');
             })
         })
@@ -218,15 +218,16 @@ export default class FightScene extends Container implements IScene {
 
         let i = 1
         let round = 1
-        let seconds = 59
+        let seconds: number
 
-        while (i < 10) {
+        while (myTeam[0].hp > 0 && enemyTeam[0].hp > 0) {
             console.log(`回合${i++}开始！`);
+            console.log('双方血量：' + myTeam[0].hp + '/' + enemyTeam[0].hp);
 
             if (round === 1) {
                 console.log('你的回合！');
 
-                seconds = 59
+                seconds = 9
                 let timer = setInterval(() => {
                     console.log(`你还有${seconds}秒！`);
                     seconds--
@@ -235,22 +236,32 @@ export default class FightScene extends Container implements IScene {
                     round = 0
                     clearInterval(timer)
                 }, (resolve) => {
-                    this.events.sign.on('a', () => {
+                    this.events.sign.on('action', () => {
                         console.log('on');
+                        enemyTeam[0].hp -= 50
                         round = 0
                         clearInterval(timer)
                         resolve()
                     })
                 })
-                this.events.sign.off('a')
+                this.events.sign.off('action')
             } else {
                 console.log('敌方回合！');
-                await blockProcess(5000, () => {
+                await blockProcess(2000, () => {
                     this.members.enemy.state.setAnimation(0, 'jump', false)
                     this.members.enemy.state.addAnimation(0, 'idle', true, 0)
                     round = 1
                 })
             }
+        }
+
+        if (myTeam[0].hp <= 0) {
+            console.log('失败！');
+        } else {
+            blockProcess(1000, () => {
+                this.members.enemy.state.setAnimation(0, 'death', false)
+                console.log('胜利！');
+            })
         }
     }
 }
