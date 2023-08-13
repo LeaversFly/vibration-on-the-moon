@@ -15,3 +15,12 @@ export type SpineLoader = (
   sheetName: keyof AssetsPacks,
   jsonList: string[],
 ) => Promise<void>;
+
+export type SheetLoader = (
+  sheetName: keyof AssetsPacks,
+  jsonList: string[],
+  keyRemap: {
+    textures?: Record<string, string>,
+    animations?: Record<string, string>,
+  },
+) => Promise<void>;

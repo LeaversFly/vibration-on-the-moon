@@ -1,14 +1,16 @@
-import { ISkeletonData, Spine } from 'pixi-spine'
+import { Spine } from 'pixi-spine'
+import { FightSpriteOptions } from '../types/characters';
 
 export default class FightSprite extends Spine {
-    constructor(options: { data: ISkeletonData }) {
+    constructor(options: FightSpriteOptions) {
         super(options.data);
 
-        this.init();
+        this.init(options);
     }
 
-    init() {
-        this.scale.set(0.5)
+    init(options: FightSpriteOptions) {
+        const { scale = 0.5 } = options
+        this.scale.set(scale)
     }
 
     /** 向左移动 */
@@ -33,7 +35,7 @@ export default class FightSprite extends Spine {
 
     // 镜像翻转
     mirror() {
-        this.scale.set(-0.5, 0.5)
+        this.scale.set(-this.scale.x, this.scale.y)
     }
 
     // 扩展销毁操作

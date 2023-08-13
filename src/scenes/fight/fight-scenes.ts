@@ -24,7 +24,7 @@ export default class FightScene extends Container implements IScene {
 
         this.events = this.bindEvents(options.app)
 
-        this.startFight()
+        // this.startFight()
     }
 
     /**
@@ -78,7 +78,7 @@ export default class FightScene extends Container implements IScene {
             x: appWidth * 0.1,
             y: appHeight * 0.73,
             text: {
-                words: '跳跃',
+                words: '技能1',
                 style: { fill: 'white' }
             }
         })
@@ -112,7 +112,7 @@ export default class FightScene extends Container implements IScene {
     * @param app 所属应用实例
     */
     createMembers(app: Application) {
-        const { SHEET_SPINEBOY } = AssetsManager.assetsPacks
+        const { SHEET_SPINEBOY, SHEET_IRENE, SHEET_SYDONQ } = AssetsManager.assetsPacks
 
         //spineboy
         const spineboy = new FightSprite({ data: SHEET_SPINEBOY.spineData })
@@ -123,23 +123,30 @@ export default class FightScene extends Container implements IScene {
         spineboy.stateData.setMix('idle', 'jump', 0.2)
         spineboy.state.setAnimation(0, 'idle', true)
 
+        //irene
+        const irene = new FightSprite({ data: SHEET_IRENE.spineData, scale: 0.4 })
+        irene.position.set(app.screen.width / 2, app.screen.height / 2)
+        irene.state.setAnimation(0, 'Idle', true)
+
         //enemy
-        const enemy = new FightSprite({ data: SHEET_SPINEBOY.spineData })
+        const enemy = new FightSprite({ data: SHEET_SYDONQ.spineData, scale: 0.4 })
         enemy.position.set(app.screen.width / 2, app.screen.height / 2)
-        spineboy.stateData.setMix('idle', 'death', 0.2)
-        enemy.state.setAnimation(0, 'idle', true)
+        enemy.stateData.setMix('Idle', 'Die', 0.2)
+        enemy.state.setAnimation(0, 'Idle', true)
 
         // 友方统一在左
-        spineboy.moveLeft(200);
+        irene.moveLeft(200)
+        spineboy.moveLeft(400);
         // 敌方统一在右,且反转
         enemy.mirror()
         enemy.moveRight(200);
 
-        this.addChild(spineboy, enemy);
+        this.addChild(spineboy, enemy, irene);
 
         return {
             spineboy,
-            enemy
+            enemy,
+            irene
         }
     }
 
@@ -150,49 +157,49 @@ export default class FightScene extends Container implements IScene {
     bindEvents(app: Application) {
         this.eventMode = 'static'
         const position = {
-            spineboy: 3
+            irene: 3
         }
 
         this.on('wheel', (e) => {
             const scroll = Math.sign(e.deltaY) * Math.min(15, Math.abs(e.deltaY));
             //顺序不可颠倒
             if (scroll > 0) {
-                if (position.spineboy + 1 > 3) {
-                    this.members.spineboy.moveLeft(position.spineboy * 150)
-                    this.components.line1.x -= position.spineboy * 150
+                if (position.irene + 1 > 3) {
+                    this.members.irene.moveLeft(position.irene * 150)
+                    this.components.line1.x -= position.irene * 150
 
-                    position.spineboy = 0
+                    position.irene = 0
                 } else {
-                    this.members.spineboy.moveRight(150)
+                    this.members.irene.moveRight(150)
                     this.components.line1.x += 150
 
-                    position.spineboy += 1
+                    position.irene += 1
                 }
             } else {
-                if (position.spineboy - 1 < 0) {
-                    position.spineboy = 3
+                if (position.irene - 1 < 0) {
+                    position.irene = 3
 
-                    this.members.spineboy.moveRight(position.spineboy * 150)
-                    this.components.line1.x += position.spineboy * 150
+                    this.members.irene.moveRight(position.irene * 150)
+                    this.components.line1.x += position.irene * 150
                 } else {
-                    this.members.spineboy.moveLeft(150)
+                    this.members.irene.moveLeft(150)
                     this.components.line1.x -= 150
 
-                    position.spineboy -= 1
+                    position.irene -= 1
                 }
             }
         });
         const sign = new EventEmitter()
         this.components.button1.onPress.connect(() => {
-            this.members.spineboy.state.setAnimation(0, 'shoot', false)
-            this.members.spineboy.state.addAnimation(0, 'idle', true, 0)
+            this.members.irene.state.setAnimation(0, 'Attack', false)
+            this.members.irene.state.addAnimation(0, 'Idle', true, 0)
             sign.emit('action', () => {
                 console.log('攻击了！');
             })
         })
         this.components.button2.onPress.connect(() => {
-            this.members.spineboy.state.setAnimation(0, 'jump', false)
-            this.members.spineboy.state.addAnimation(0, 'idle', true, 0)
+            this.members.irene.state.setAnimation(0, 'Skill_1', false)
+            this.members.irene.state.addAnimation(0, 'Idle', true, 0)
         })
 
         return {
@@ -259,7 +266,7 @@ export default class FightScene extends Container implements IScene {
             console.log('失败！');
         } else {
             blockProcess(1000, () => {
-                this.members.enemy.state.setAnimation(0, 'death', false)
+                this.members.enemy.state.setAnimation(0, 'Death', false)
                 console.log('胜利！');
             })
         }

@@ -1,5 +1,5 @@
 import { AssetsPacks } from "../config/assets-config";
-import { Assets } from "pixi.js";
+import { Assets, Spritesheet, Texture } from "pixi.js";
 import { TotalProgressCallback } from "../types/service";
 
 /** 资源管理器 */
@@ -60,6 +60,12 @@ export class AssetsManager {
                 const mapKeyToResource = await AssetsManager.loadSpine(jsonList, onProgress);
                 Object.assign(assetsPacks[sheetName], mapKeyToResource);
             },
+            // async loadSheet(sheetName, jsonList, keyRemap) {
+            //     totalProgress.packName = sheetName;
+            //     const mapKeyToResource = await AssetsManager.loadSheet(jsonList, keyRemap, onProgress);
+            //     Object.assign(assetsPacks[sheetName], mapKeyToResource);
+
+            // }
         });
 
         this.isLoading = false;
@@ -79,4 +85,38 @@ export class AssetsManager {
         }
         return mapFileNameToResource;
     }
+    /** 加载 Spritesheet 型分包 */
+    // private static async loadSheet(jsonList: string[], keyRemap: {
+    //     textures?: Record<string, string>,
+    //     animations?: Record<string, string>,
+    // }, onProgress: (progress: number) => void) {
+    //     const total = jsonList.length;
+    //     const mapFileNameToResource = {
+    //         animations: {} as Record<string, Texture[]>,
+    //         textures: {} as Record<string, Texture>,
+    //     };
+    //     // 逐个加载 json，结果合并到同一个集合内
+    //     for (let i = 0; i < total; i += 1) {
+    //         const jsonUrl = jsonList[i];
+    //         const newAssets = await Assets.load(jsonUrl) as Spritesheet;
+    //         Object.assign(mapFileNameToResource.animations, newAssets.animations);
+    //         Object.assign(mapFileNameToResource.textures, newAssets.textures);
+    //     }
+    //     // 将 json 内的文件名和动画名，转换为定义的 key
+    //     const mapKeyToResource = {
+    //         animations: {} as Record<string, Texture[]>,
+    //         textures: {} as Record<string, Texture>,
+    //     };
+    //     const {
+    //         animations: animationKeys = {},
+    //         textures: textureKeys = {},
+    //     } = keyRemap;
+    //     Object.entries(animationKeys).forEach(([key, fileName]) => {
+    //         mapKeyToResource.animations[key] = mapFileNameToResource.animations[fileName];
+    //     });
+    //     Object.entries(textureKeys).forEach(([key, fileName]) => {
+    //         mapKeyToResource.textures[key] = mapFileNameToResource.textures[fileName];
+    //     });
+    //     return mapKeyToResource;
+    // }
 }
