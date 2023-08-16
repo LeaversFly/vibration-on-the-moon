@@ -24,3 +24,9 @@ export type SheetLoader = (
     animations?: Record<string, string>,
   },
 ) => Promise<void>;
+
+export type TeamType = {
+  id: number,
+  name: string,
+  data: ISkeletonData
+}

@@ -5,14 +5,16 @@ import { SkillButtonCreator } from './skill-button-creator';
 import { SkillLineCreator } from './skill-line-creator';
 import { EventEmitter } from '@pixi/utils';
 import { blockProcess } from '../../utils/fight';
+import { TeamType } from '../../types/config';
 
 export default class FightScene extends Container implements IScene {
     private scenes
     private members
     private components
     private events
+    private pos
 
-    constructor(options: { app: Application }) {
+    constructor(options: { app: Application, team: TeamType[] }) {
         // 调用基类构造函数，完成基础初始化
         super();
 
@@ -21,6 +23,8 @@ export default class FightScene extends Container implements IScene {
         this.components = this.createComponents(options.app)
 
         this.members = this.createMembers(options.app);
+
+        this.pos = options.team.map(item => item.name)
 
         this.events = this.bindEvents(options.app)
 
@@ -128,6 +132,16 @@ export default class FightScene extends Container implements IScene {
         irene.position.set(app.screen.width / 2, app.screen.height / 2)
         irene.state.setAnimation(0, 'Idle', true)
 
+        //irene1
+        const irene1 = new FightSprite({ data: SHEET_IRENE.spineData, scale: 0.4 })
+        irene1.position.set(app.screen.width / 2, app.screen.height / 2)
+        irene1.state.setAnimation(0, 'Idle', true)
+
+        //irene2
+        const irene2 = new FightSprite({ data: SHEET_IRENE.spineData, scale: 0.4 })
+        irene2.position.set(app.screen.width / 2, app.screen.height / 2)
+        irene2.state.setAnimation(0, 'Idle', true)
+
         //enemy
         const enemy = new FightSprite({ data: SHEET_SYDONQ.spineData, scale: 0.4 })
         enemy.position.set(app.screen.width / 2, app.screen.height / 2)
@@ -136,17 +150,21 @@ export default class FightScene extends Container implements IScene {
 
         // 友方统一在左
         irene.moveLeft(200)
-        spineboy.moveLeft(400);
+        spineboy.moveLeft(350);
+        irene1.moveLeft(500)
+        irene2.moveLeft(650)
         // 敌方统一在右,且反转
         enemy.mirror()
         enemy.moveRight(200);
 
-        this.addChild(spineboy, enemy, irene);
+        this.addChild(spineboy, enemy, irene, irene1, irene2);
 
         return {
             spineboy,
             enemy,
-            irene
+            irene,
+            irene1,
+            irene2
         }
     }
 
@@ -156,39 +174,51 @@ export default class FightScene extends Container implements IScene {
     */
     bindEvents(app: Application) {
         this.eventMode = 'static'
-        const position = {
-            irene: 3
-        }
+        type PosType = keyof typeof this.members
 
         this.on('wheel', (e) => {
             const scroll = Math.sign(e.deltaY) * Math.min(15, Math.abs(e.deltaY));
+            let current = this.pos.indexOf('irene')
+            let pre = this.pos.indexOf('irene') - 1
+            let next = this.pos.indexOf('irene') + 1
+
             //顺序不可颠倒
             if (scroll > 0) {
-                if (position.irene + 1 > 3) {
-                    this.members.irene.moveLeft(position.irene * 150)
-                    this.components.line1.x -= position.irene * 150
+                if (current + 1 > 3) {
+                    this.members[this.pos[current] as PosType].moveLeft(current * 150)
+                    this.components.line1.x -= current * 150
+                    this.members[this.pos[0] as PosType].moveRight(150)
+                    this.members[this.pos[1] as PosType].moveRight(150)
+                    this.members[this.pos[2] as PosType].moveRight(150)
 
-                    position.irene = 0
+                    this.pos.unshift(this.pos.pop() as string)
                 } else {
-                    this.members.irene.moveRight(150)
-                    this.components.line1.x += 150
+                    this.members[this.pos[current] as PosType].moveRight(150)
+                    this.components.line1.x += 150 as number
+                    this.members[this.pos[next] as PosType].moveLeft(150)
 
-                    position.irene += 1
+                    this.pos[next] = this.pos.splice(current, 1, this.pos[next])[0]
                 }
             } else {
-                if (position.irene - 1 < 0) {
-                    position.irene = 3
+                if (current - 1 < 0) {
+                    this.members[this.pos[current] as PosType].moveRight(3 * 150)
+                    this.components.line1.x += 3 * 150
+                    this.members[this.pos[1] as PosType].moveLeft(150)
+                    this.members[this.pos[2] as PosType].moveLeft(150)
+                    this.members[this.pos[3] as PosType].moveLeft(150)
 
-                    this.members.irene.moveRight(position.irene * 150)
-                    this.components.line1.x += position.irene * 150
+                    this.pos.push(this.pos.shift() as string)
                 } else {
-                    this.members.irene.moveLeft(150)
+                    this.members[this.pos[current] as PosType].moveLeft(150)
                     this.components.line1.x -= 150
+                    this.members[this.pos[pre] as PosType].moveRight(150)
 
-                    position.irene -= 1
+                    this.pos[current] = this.pos.splice(pre, 1, this.pos[current])[0]
                 }
             }
         });
+
+
         const sign = new EventEmitter()
         this.components.button1.onPress.connect(() => {
             this.members.irene.state.setAnimation(0, 'Attack', false)
