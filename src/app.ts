@@ -1,8 +1,8 @@
 import { Application } from 'pixi.js';
-import FightScene from './scenes/fight/fight-scenes';
 import { BootLoader } from './scenes/boot-loader'
 import { SceneManager } from './service/scene-manager'
-import { team } from './config/character-config';
+import SnakeScene from './scenes/snake-scene';
+import { AssetsManager } from './service/assets-manager';
 
 export default class MyApp extends Application {
     constructor() {
@@ -19,12 +19,20 @@ export default class MyApp extends Application {
 
         const bootLoader = new BootLoader({
             onAssetsLoaded: () => {
-                // 创建起始场景
-                const fightScene = new FightScene({
-                    app: this,
-                    team: team
-                });
-                SceneManager.changeScene(fightScene);
+                // const { addTeam, getTeam } = useTeam()
+                // addTeam([
+                //     IRENE,
+                //     SYDONQ
+                // ])
+                // const fightScene = new FightScene({
+                //     app: this,
+                //     team: getTeam()
+                // });
+                const snakeScene = new SnakeScene({
+                    app: this
+                })
+                SceneManager.changeScene(snakeScene);
+                console.log(AssetsManager.assetsPacks);
             },
         });
 

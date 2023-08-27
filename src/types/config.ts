@@ -26,7 +26,11 @@ export type SheetLoader = (
 ) => Promise<void>;
 
 export type TeamType = {
-  id: number,
   name: string,
   data: ISkeletonData
 }
+
+export type FontLoader = (
+  bundleName: keyof AssetsPacks,
+  bundleContents: Record<string, string>,
+) => Promise<void>;
