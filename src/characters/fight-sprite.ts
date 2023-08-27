@@ -9,7 +9,7 @@ export default class FightSprite extends Spine {
     }
 
     init(options: FightSpriteOptions) {
-        const { scale = 0.5 } = options
+        const { scale = 0.4 } = options
         this.scale.set(scale)
     }
 

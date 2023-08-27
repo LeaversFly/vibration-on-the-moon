@@ -1,21 +1,31 @@
 import { reactive } from "vue";
-import { AssetsManager } from "../service/assets-manager";
+import { TeamType } from "../types/config";
+import { getSheet } from "../utils/sheet";
 
-const { SHEET_IRENE, SHEET_SPINEBOY } = AssetsManager.assetsPacks
-
-export const Irene = {
-    id: 0,
-    name: 'irene',
-    data: SHEET_IRENE.spineData
+export enum Character {
+    IRENE = 'irene',
+    SPINEBOY = 'spineboy',
+    SYDONQ = 'sydonq'
 }
 
-export const Spineboy = {
-    id: 1,
-    name: 'spineboy',
-    data: SHEET_SPINEBOY.spineData
-}
+export const team = reactive<TeamType[]>([])
 
-export const team = reactive([
-    Irene,
-    Spineboy,
-])
+export function useTeam() {
+    const addTeam = (members: string[]) => {
+        members.forEach((item) => {
+            team.push({
+                name: item,
+                data: getSheet(item).spineData
+            })
+        })
+    }
+
+    const getTeam = () => {
+        return team
+    }
+
+    return {
+        addTeam,
+        getTeam
+    }
+}

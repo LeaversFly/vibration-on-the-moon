@@ -1,4 +1,3 @@
-import FightSprite from '../../characters/fight-sprite'
 import { AssetsManager } from '../../service/assets-manager';
 import { Application, BlurFilter, Container, Graphics, Sprite } from 'pixi.js';
 import { SkillButtonCreator } from './skill-button-creator';
@@ -6,13 +5,15 @@ import { SkillLineCreator } from './skill-line-creator';
 import { EventEmitter } from '@pixi/utils';
 import { blockProcess } from '../../utils/fight';
 import { TeamType } from '../../types/config';
+import { FightSpriteCreator } from './fight-sprite-creator';
+import { team } from '../../config/character-config';
 
 export default class FightScene extends Container implements IScene {
     private scenes
     private members
     private components
     private events
-    private pos
+    private pos = new Array(4).fill('')
 
     constructor(options: { app: Application, team: TeamType[] }) {
         // 调用基类构造函数，完成基础初始化
@@ -24,7 +25,7 @@ export default class FightScene extends Container implements IScene {
 
         this.members = this.createMembers(options.app);
 
-        this.pos = options.team.map(item => item.name)
+        options.team.forEach((item, index) => this.pos[index] = item.name)
 
         this.events = this.bindEvents(options.app)
 
@@ -40,10 +41,11 @@ export default class FightScene extends Container implements IScene {
         const bgSprite = new Sprite(bg)
         bgSprite.width = app.screen.width
         bgSprite.height = app.screen.height
+
         this.addChild(bgSprite)
 
         return {
-            bgSprite
+            bg
         }
     }
 
@@ -95,7 +97,7 @@ export default class FightScene extends Container implements IScene {
         })
 
         const line1 = skillLineCreator.create({
-            x: appWidth / 2 - 200,
+            x: appWidth / 2 - 600,
             y: appHeight / 2 + 10,
             lineTo: [[0, 50], [400, 50], [400, 0]]
         })
@@ -116,56 +118,16 @@ export default class FightScene extends Container implements IScene {
     * @param app 所属应用实例
     */
     createMembers(app: Application) {
-        const { SHEET_SPINEBOY, SHEET_IRENE, SHEET_SYDONQ } = AssetsManager.assetsPacks
-
-        //spineboy
-        const spineboy = new FightSprite({ data: SHEET_SPINEBOY.spineData })
-        spineboy.position.set(app.screen.width / 2, app.screen.height / 2)
-        spineboy.stateData.setMix('idle', 'shoot', 0.2)
-        spineboy.stateData.setMix('shoot', 'idle', 0.2)
-        spineboy.stateData.setMix('jump', 'idle', 0.2)
-        spineboy.stateData.setMix('idle', 'jump', 0.2)
-        spineboy.state.setAnimation(0, 'idle', true)
-
-        //irene
-        const irene = new FightSprite({ data: SHEET_IRENE.spineData, scale: 0.4 })
-        irene.position.set(app.screen.width / 2, app.screen.height / 2)
-        irene.state.setAnimation(0, 'Idle', true)
-
-        //irene1
-        const irene1 = new FightSprite({ data: SHEET_IRENE.spineData, scale: 0.4 })
-        irene1.position.set(app.screen.width / 2, app.screen.height / 2)
-        irene1.state.setAnimation(0, 'Idle', true)
-
-        //irene2
-        const irene2 = new FightSprite({ data: SHEET_IRENE.spineData, scale: 0.4 })
-        irene2.position.set(app.screen.width / 2, app.screen.height / 2)
-        irene2.state.setAnimation(0, 'Idle', true)
-
-        //enemy
-        const enemy = new FightSprite({ data: SHEET_SYDONQ.spineData, scale: 0.4 })
-        enemy.position.set(app.screen.width / 2, app.screen.height / 2)
-        enemy.stateData.setMix('Idle', 'Die', 0.2)
-        enemy.state.setAnimation(0, 'Idle', true)
+        const fightSpriteCreator = new FightSpriteCreator()
+        const fightSprites = fightSpriteCreator.create({ team, app })
 
         // 友方统一在左
-        irene.moveLeft(200)
-        spineboy.moveLeft(350);
-        irene1.moveLeft(500)
-        irene2.moveLeft(650)
+        Object.keys(fightSprites).forEach((key, index) => fightSprites[key].moveLeft((4 - index) * 150))
         // 敌方统一在右,且反转
-        enemy.mirror()
-        enemy.moveRight(200);
 
-        this.addChild(spineboy, enemy, irene, irene1, irene2);
+        Object.keys(fightSprites).forEach((key) => this.addChild(fightSprites[key]))
 
-        return {
-            spineboy,
-            enemy,
-            irene,
-            irene1,
-            irene2
-        }
+        return fightSprites
     }
 
     /**
@@ -178,6 +140,7 @@ export default class FightScene extends Container implements IScene {
 
         this.on('wheel', (e) => {
             const scroll = Math.sign(e.deltaY) * Math.min(15, Math.abs(e.deltaY));
+
             let current = this.pos.indexOf('irene')
             let pre = this.pos.indexOf('irene') - 1
             let next = this.pos.indexOf('irene') + 1
@@ -187,15 +150,15 @@ export default class FightScene extends Container implements IScene {
                 if (current + 1 > 3) {
                     this.members[this.pos[current] as PosType].moveLeft(current * 150)
                     this.components.line1.x -= current * 150
-                    this.members[this.pos[0] as PosType].moveRight(150)
-                    this.members[this.pos[1] as PosType].moveRight(150)
-                    this.members[this.pos[2] as PosType].moveRight(150)
+                    this.members[this.pos[0] as PosType]?.moveRight(150)
+                    this.members[this.pos[1] as PosType]?.moveRight(150)
+                    this.members[this.pos[2] as PosType]?.moveRight(150)
 
                     this.pos.unshift(this.pos.pop() as string)
                 } else {
-                    this.members[this.pos[current] as PosType].moveRight(150)
+                    this.members[this.pos[current] as PosType]?.moveRight(150)
                     this.components.line1.x += 150 as number
-                    this.members[this.pos[next] as PosType].moveLeft(150)
+                    this.members[this.pos[next] as PosType]?.moveLeft(150)
 
                     this.pos[next] = this.pos.splice(current, 1, this.pos[next])[0]
                 }
@@ -203,15 +166,15 @@ export default class FightScene extends Container implements IScene {
                 if (current - 1 < 0) {
                     this.members[this.pos[current] as PosType].moveRight(3 * 150)
                     this.components.line1.x += 3 * 150
-                    this.members[this.pos[1] as PosType].moveLeft(150)
-                    this.members[this.pos[2] as PosType].moveLeft(150)
-                    this.members[this.pos[3] as PosType].moveLeft(150)
+                    this.members[this.pos[1] as PosType]?.moveLeft(150)
+                    this.members[this.pos[2] as PosType]?.moveLeft(150)
+                    this.members[this.pos[3] as PosType]?.moveLeft(150)
 
                     this.pos.push(this.pos.shift() as string)
                 } else {
-                    this.members[this.pos[current] as PosType].moveLeft(150)
+                    this.members[this.pos[current] as PosType]?.moveLeft(150)
                     this.components.line1.x -= 150
-                    this.members[this.pos[pre] as PosType].moveRight(150)
+                    this.members[this.pos[pre] as PosType]?.moveRight(150)
 
                     this.pos[current] = this.pos.splice(pre, 1, this.pos[current])[0]
                 }
